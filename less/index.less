@@ -1,4 +1,7 @@
-// Is this working?
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
+
+// RESET
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -53,7 +56,134 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+// VARIABLES
+
+@font: 		'Noto Sans', sans-serif;
+@mobile:	500px;
+@brand:		rosybrown;
+@bg: 		#1F252A; 		// dark slate gray
+@accent1: 	lightslategray;
+@accent2: 	#C8BEB8;		// silver
+@complement:#857D7A;		// gray
+
+// MIXINS
+
+.center() {
+	display: flex;
+	justify-content: center;
 }
 
+// GENERAL
+
+html {
+	font-size: 62.5%;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: @font;
+	font-size: 1.8rem;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, p {
+	margin: 1.6rem 0;
+}
+
+h1 {
+	font-size: 7.2rem;
+	line-height: 1.0;
+}
+
+h2 {
+	font-size: 3.6rem;
+}
+
+h3 {
+	font-size: 2.4rem;
+}
+
+h4 {
+	font-size: 2.0rem;
+}
+
+// CONTAINER
+
+.container {
+	width: 70%;
+	margin: 0 auto;
+	background: @accent2;
+
+	@media (max-width: @mobile) {
+		width: 95%;
+	}
+}
+
+// HEADER
+
+header {
+	padding: 2.5% 0%;
+
+	nav {
+		width: 30%;
+		margin-left: auto; // align right
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: @complement;
+
+		a {
+			color: @brand;
+			text-decoration: none;
+		}
+
+		@media (max-width: @mobile) {
+			width: 100%;
+		}
+	}
+}
+
+// HERO IMAGE
+
+.hero-img {
+	// "linear-gradient" darkens image so text is easier to read
+	background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../img/lake.jpg");
+	height: 50vh;
+	background-size: cover;
+	// position and center image to scale on all screens
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.hero-text {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: @accent2;
+
+	.button {
+		color: inherit;
+		text-decoration: none;
+		background-color: @accent1;
+		border-radius: 1.0rem;
+		cursor: pointer;
+		padding: 1.0rem;
+		font-size: 1.5em;
+
+		&:hover {
+			background-color: transparent;
+			border: 0.2rem solid @complement;
+		}
+
+		@media (max-width: @mobile) {
+			padding: 0.75rem;
+			font-size: 1.25em;
+		}
+	}
+}
