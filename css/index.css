@@ -1,3 +1,4 @@
+@import url("fontawesome-all.min.css");
 @font-face {
   font-family: 'Noto Sans';
   font-style: normal;
@@ -198,7 +199,7 @@ header {
   }
 }
 header nav {
-  width: 30%;
+  width: 35%;
   margin-left: auto;
   display: flex;
   justify-content: space-between;
@@ -256,6 +257,7 @@ header nav a {
   width: 70%;
   margin: 0 auto;
   color: lightslategray;
+  padding-bottom: 2.5%;
 }
 @media (max-width: 500px) {
   #main {
@@ -281,6 +283,10 @@ header nav a {
 .row section .box h4 {
   padding-left: 2.25rem;
 }
+.row section h2,
+.row section h3 {
+  color: rosybrown;
+}
 @media (max-width: 500px) {
   .row {
     flex-direction: column;
@@ -288,6 +294,9 @@ header nav a {
   .row section {
     width: 100%;
   }
+}
+.work {
+  padding: 0.5%;
 }
 .work table {
   width: 100%;
@@ -309,12 +318,36 @@ header nav a {
   background-color: lightslategray;
 }
 @media (max-width: 500px) {
-  .work table,
-  .work tr,
-  .work td {
-    display: block;
+  .work table {
+    text-align: center;
   }
-  .work th {
-    display: none;
+}
+.work h3 {
+  color: rosybrown;
+}
+footer {
+  width: 70%;
+  margin: 0 auto;
+  padding: 1.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rosybrown;
+  color: #1F252A;
+}
+@media (max-width: 500px) {
+  footer {
+    width: 95%;
+  }
+}
+footer div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 45%;
+}
+@media (max-width: 500px) {
+  footer div {
+    width: 100%;
   }
 }

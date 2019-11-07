@@ -1,3 +1,4 @@
+@import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap");
 
 // RESET
@@ -69,9 +70,9 @@ table {
 
 // MIXINS
 
-.center() {
+.flex-row() {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 }
 
 .container {
@@ -121,8 +122,6 @@ h4 {
 	font-size: 2.0rem;
 }
 
-
-
 // HEADER
 
 header {
@@ -131,10 +130,9 @@ header {
 	padding: 2.5% 0%;
 
 	nav {
-		width: 30%;
+		width: 35%;
 		margin-left: auto; // align right
-		display: flex;
-		justify-content: space-between;
+		.flex-row();
 		align-items: center;
 
 		a {
@@ -200,11 +198,11 @@ header {
 #main {
 	.container();
 	color: @accent1;
+	padding-bottom: 2.5%;
 }
 
 .row {
-	display: flex;
-	justify-content: space-between;
+	.flex-row();
 
 	section {
 		width: 48%;
@@ -222,6 +220,10 @@ header {
 			h4 {
 				padding-left: 2.25rem;
 			}
+		}
+
+		h2, h3 {
+			color: @brand;
 		}
 	}
 
@@ -255,15 +257,37 @@ header {
 		tr:nth-child(even) {
 			background-color: @accent1;
 		}
-	}
 
-	@media (max-width: @mobile) {
-		table, tr, td {
-			display: block;
-		}
-
-		th {
-			display: none;
+		@media (max-width: @mobile) {
+			text-align: center;
 		}
 	}
+
+	padding: 0.5%;
+
+	h3 {
+		color: @brand;
+	}
+}
+
+// footer
+
+footer {
+	.container();
+	padding: 1.5%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: @brand;
+	color: @bg;
+
+	div {
+		.flex-row();
+		align-items: center;
+		width: 45%;
+	
+		@media (max-width: @mobile) {
+			width: 100%;
+		}
+	}	
 }
