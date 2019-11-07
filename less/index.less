@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap");
 
 // RESET
 
@@ -34,6 +34,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -73,6 +74,15 @@ table {
 	justify-content: center;
 }
 
+.container {
+	width: 70%;
+	margin: 0 auto;
+
+	@media (max-width: @mobile) {
+		width: 95%;
+	}
+}
+
 // GENERAL
 
 html {
@@ -87,6 +97,7 @@ body {
 	font-family: @font;
 	font-size: 1.8rem;
 	line-height: 1.5;
+	background: @bg;
 }
 
 h1, h2, h3, h4, p {
@@ -110,21 +121,13 @@ h4 {
 	font-size: 2.0rem;
 }
 
-// CONTAINER
 
-.container {
-	width: 70%;
-	margin: 0 auto;
-	background: @accent2;
-
-	@media (max-width: @mobile) {
-		width: 95%;
-	}
-}
 
 // HEADER
 
 header {
+	.container();
+
 	padding: 2.5% 0%;
 
 	nav {
@@ -133,7 +136,6 @@ header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background: @complement;
 
 		a {
 			color: @brand;
@@ -152,6 +154,7 @@ header {
 	// "linear-gradient" darkens image so text is easier to read
 	background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../img/lake.jpg");
 	height: 50vh;
+	width: 100vw;
 	background-size: cover;
 	// position and center image to scale on all screens
 	background-position: center;
@@ -167,6 +170,10 @@ header {
 	transform: translate(-50%, -50%);
 	color: @accent2;
 
+	h3 {
+		margin-bottom: 3.0rem;
+	}
+
 	.button {
 		color: inherit;
 		text-decoration: none;
@@ -174,7 +181,7 @@ header {
 		border-radius: 1.0rem;
 		cursor: pointer;
 		padding: 1.0rem;
-		font-size: 1.5em;
+		font-size: 1.25em;
 
 		&:hover {
 			background-color: transparent;
@@ -184,6 +191,79 @@ header {
 		@media (max-width: @mobile) {
 			padding: 0.75rem;
 			font-size: 1.25em;
+		}
+	}
+}
+
+// MAIN
+
+#main {
+	.container();
+	color: @accent1;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+
+	section {
+		width: 48%;
+		margin-bottom: 2.5%;
+
+		.box {
+			border: 0.1rem solid @complement;
+			border-radius: 0.5rem;
+
+			hr {
+				border: 1px solid @complement;	
+				border-bottom: 0;
+			}
+
+			h4 {
+				padding-left: 2.25rem;
+			}
+		}
+	}
+
+	@media (max-width: @mobile) {
+		flex-direction: column;
+		
+		section {
+			width: 100%;
+		}
+	}
+}
+
+.work {
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 2.0rem;
+		color: @accent2;
+		text-align: left;
+
+		td, th {
+			border-top: 1px solid @complement;
+			border-bottom: 1px solid @complement;
+			padding: 0.8rem;
+		}
+
+		th {
+			font-weight: bold;
+		}
+
+		tr:nth-child(even) {
+			background-color: @accent1;
+		}
+	}
+
+	@media (max-width: @mobile) {
+		table, tr, td {
+			display: block;
+		}
+
+		th {
+			display: none;
 		}
 	}
 }
