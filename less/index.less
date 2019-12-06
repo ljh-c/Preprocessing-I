@@ -267,6 +267,41 @@ header {
 	h3 {
 		color: @brand;
 	}
+
+	.row {
+		width: 100%;
+		font-size: 2.0rem;
+		color: @accent2;
+		display: flex;
+		justify-content: space-evenly;
+	
+		.card {
+			padding: 10px;
+			width:35%;
+
+			img {
+				max-width: 100%;
+				border-radius: 10px;
+				height: 175px;
+				background-size: cover;
+				object-fit: none;
+				background: red;
+			}
+
+			img.truck {
+				object-fit: contain;
+				background: white;
+			}
+			
+			@media (max-width: @mobile) {
+				width: 100%;
+			}
+		}
+
+		@media (max-width: @mobile) {
+			flex-direction: column;
+		}
+	}
 }
 
 // footer

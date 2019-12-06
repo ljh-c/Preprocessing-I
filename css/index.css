@@ -324,6 +324,39 @@ header nav a {
 .work h3 {
   color: rosybrown;
 }
+.work .row {
+  width: 100%;
+  font-size: 2rem;
+  color: #C8BEB8;
+  display: flex;
+  justify-content: space-evenly;
+}
+.work .row .card {
+  padding: 10px;
+  width: 35%;
+}
+.work .row .card img {
+  max-width: 100%;
+  border-radius: 10px;
+  height: 175px;
+  background-size: cover;
+  object-fit: none;
+  background: red;
+}
+.work .row .card img.truck {
+  object-fit: contain;
+  background: white;
+}
+@media (max-width: 500px) {
+  .work .row .card {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  .work .row {
+    flex-direction: column;
+  }
+}
 footer {
   width: 70%;
   margin: 0 auto;
